@@ -1209,7 +1209,7 @@ CallstackEntryData DecodeCallstackPtr( uint64_t ptr )
         if( dladdr( (void*)ptr, &dlinfo ) )
         {
             imageName = dlinfo.dli_fname;
-            imageBaseAddress = dlinfo.dli_fbase;
+            imageBaseAddress = uint64_t(dlinfo.dli_fbase);
         }
 #endif
 
